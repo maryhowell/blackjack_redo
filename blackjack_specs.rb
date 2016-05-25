@@ -147,34 +147,34 @@ class PlayerTest < Minitest::Test
     assert_equal 100, p.wallet
   end
 
-#   def test_players_can_win_money
-#     p = Player.new 50
-#     p.wins 10
-#     assert_equal 60, p.wallet
-#   end
-#
-#   def test_players_have_a_hand
-#     p = Player.new
-#     assert p.hand.is_a?(Hand)
-#   end
-#
-#   def test_players_can_be_broke
-#     p = Player.new 10
-#     refute p.broke?
-#
-#     p.wins -10
-#     assert p.broke?
-#   end
-# end
-#
-# class DealerTest < Minitest::Test
-#   def test_can_deal_a_hand
-#     p = Player.new
-#     d = Dealer.new
-#
-#     d.deal_hand_to p
-#     assert_equal 2, p.hand.cards.count
-#   end
+  def test_players_can_win_money
+    p = Player.new 50
+    p.wins 10
+    assert_equal 60, p.wallet
+  end
+
+  def test_players_have_a_hand
+    p = Player.new
+    assert p.hand.is_a?(Hand)
+  end
+
+  def test_players_can_be_broke
+    p = Player.new 10
+    refute p.broke?
+
+    p.wins -10
+    assert p.broke?
+  end
+end
+
+class DealerTest < Minitest::Test
+  def test_can_deal_a_hand
+    p = Player.new
+    d = Dealer.new
+
+    d.deal_hand_to p
+    assert_equal 2, p.hand.cards.count
+  end
 #
 #   def test_can_deal_a_card
 #     p = Player.new
