@@ -9,6 +9,10 @@ class Player
     @hand = hand
   end
 
+  def hand_new
+    @hand = Hand.new
+  end
+
   def wins (new_winnings)
     @wallet = new_winnings + wallet
   end
@@ -18,11 +22,7 @@ class Player
   end
 
   def broke?
-    if  @wallet == 0
-      true
-    else
-      false
-    end
+    @wallet == 0
   end
 
 end
