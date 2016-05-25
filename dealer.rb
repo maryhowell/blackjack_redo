@@ -26,7 +26,11 @@ attr_reader :deck ,:hand
       player.add_to_hand(@deck.draw)
 
   end
-  
+
+  def hit?
+    hand.value < 18
+  end
+
   def add_to_hand card
     @hand.add(card)
   end

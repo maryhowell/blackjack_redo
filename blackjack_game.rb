@@ -24,7 +24,7 @@ dealer.deal_hand_to(player)
 dealer.deal_hand_to(dealer)
 
 puts "Dealers"
-puts dealer.hand.showing + "           value: #{dealer.hand.value}"
+puts dealer.hand.showing
 puts
 puts "Your Inital Draw"
 puts player.hand.to_s  + "        value: #{player.hand.value}"
@@ -33,22 +33,34 @@ puts player.hand.to_s  + "        value: #{player.hand.value}"
 while player.hit?
   dealer.hit(player)
   puts "Dealers"
+  puts dealer.hand.showing
+  puts
+  puts "Your cards"
+  puts player.hand.to_s  + "        value: #{player.hand.value}"
+  if player.hand.busted?
+    puts "You bust"
+    exit
+  end
+  if player.hand.blackjack?
+    puts "you got blackjack!"
+  end
+end
+
+while dealer.hit?
+  dealer.hit(dealer)
+  puts "Dealers"
   puts dealer.hand.showing + "           value: #{dealer.hand.value}"
   puts
   puts "Your cards"
   puts player.hand.to_s  + "        value: #{player.hand.value}"
-
-    if player.hand.busted?
-      puts "You bust"
-      exit
-    end
-    if player.hand.blackjack?
-      puts "you got blackjack!"
-    end
-
-  #  busted?, blackjack?, beats?
+  if dealer.hand.busted?
+    puts "Dealer Busted You Win"
+    exit
+  end
+  if dealer.hand.blackjack?
+    puts "Dealer got blackjack! You Lost"
+  end
 end
-
 
 
 
