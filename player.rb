@@ -13,6 +13,10 @@ class Player
     @wallet = new_winnings + wallet
   end
 
+  def add_to_hand card
+    @hand.add(card)
+  end
+
   def broke?
     if  @wallet == 0
       true
