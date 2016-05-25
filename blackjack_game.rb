@@ -62,6 +62,11 @@ while dealer.hit?
   end
 end
 
+if player.hand.beats?(dealer.hand)
+  puts "You Won"
+else
+  puts "Dealer Wins"
+end
 
 
 
