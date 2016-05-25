@@ -4,7 +4,7 @@ require './hand'
 class Player
   attr_reader :wallet, :hand
 
-  def initialize wallet = nil, hand = Hand.new
+  def initialize wallet = 0, hand = Hand.new
     @wallet = wallet
     @hand = hand
   end
