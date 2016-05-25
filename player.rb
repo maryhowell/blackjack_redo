@@ -21,6 +21,11 @@ class Player
     @hand.add(card)
   end
 
+  def hit?
+    puts "Would you like to hit? (y/n)?"
+    gets.chomp == "y"
+  end
+
   def broke?
     @wallet == 0
   end
